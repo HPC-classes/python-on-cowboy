@@ -5,7 +5,6 @@ import glob
 
 #get file names for all the data files
 filenames = glob.glob('data/inflammation*.csv')
-filenames = filenames[0:]
 
 #setup lists for holding accumulated data
 alldatamean = list()
