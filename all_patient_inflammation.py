@@ -4,6 +4,9 @@ import numpy
 import glob
 import os
 
+# function used to make .csv data pretty once all the data is processed
+from add_headers import addHeader
+
 # setup directory for .csv output
 if not os.path.exists('inflammation_output'):
     os.makedirs('inflammation_output')
@@ -70,3 +73,8 @@ alldatamin = numpy.vstack([alldatamin, alldatamin.min(axis=0)])
 numpy.savetxt('inflammation_output/mean.csv', alldatamean, delimiter=',')
 numpy.savetxt('inflammation_output/max.csv', alldatamax, delimiter=',')
 numpy.savetxt('inflammation_output/min.csv', alldatamin, delimiter=',')
+
+# make .csv files excel friendly
+addHeader('inflammation_output/mean.csv')
+addHeader('inflammation_output/max.csv')
+addHeader('inflammation_output/min.csv')
