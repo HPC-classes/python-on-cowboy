@@ -8,8 +8,8 @@ import os
 from add_headers import addHeader
 
 # setup directory for .csv output
-if not os.path.exists('inflammation_output'):
-    os.makedirs('inflammation_output')
+if not os.path.exists('output'):
+    os.makedirs('output')
 
 # get file names for all the data files
 filenames = glob.glob('data/inflammation*.csv')
@@ -70,11 +70,11 @@ alldatamax = numpy.vstack([alldatamax, alldatamax.max(axis=0)])
 alldatamin = numpy.vstack([alldatamin, alldatamin.min(axis=0)])
 
 # output results to csv
-numpy.savetxt('inflammation_output/mean.csv', alldatamean, delimiter=',')
-numpy.savetxt('inflammation_output/max.csv', alldatamax, delimiter=',')
-numpy.savetxt('inflammation_output/min.csv', alldatamin, delimiter=',')
+numpy.savetxt('output/mean.csv', alldatamean, delimiter=',')
+numpy.savetxt('output/max.csv', alldatamax, delimiter=',')
+numpy.savetxt('output/min.csv', alldatamin, delimiter=',')
 
 # make .csv files excel friendly
-addHeader('inflammation_output/mean.csv')
-addHeader('inflammation_output/max.csv')
-addHeader('inflammation_output/min.csv')
+addHeader('output/mean.csv')
+addHeader('output/max.csv')
+addHeader('output/min.csv')

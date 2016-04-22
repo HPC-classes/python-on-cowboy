@@ -1,2 +1,4 @@
-inflammation_output/
-inflammation_output/*
+output/
+output/*
+__pycache__
+*.pbs.*
