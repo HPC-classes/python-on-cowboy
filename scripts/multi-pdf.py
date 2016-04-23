@@ -1,3 +1,5 @@
+# this script produces a single pdf with three
+# plots for each of the inflammation data files
 import os
 import numpy
 import matplotlib
@@ -6,13 +8,16 @@ import glob
 import matplotlib.pyplot
 from matplotlib.backends.backend_pdf import PdfPages
 
+# create output directory if it doesn't exist
 if not os.path.exists('output'):
     os.makedirs('output')
-
+# set up the single output pdf file
 pdf_pages = PdfPages('output/multiple-inflammation.pdf')
 
+# get all the filenames
 filenames = glob.glob('data/inflammation*.csv')
 
+# process each data file
 for f in filenames:
     data = numpy.loadtxt(fname=f, delimiter=',')
     fig = matplotlib.pyplot.figure(figsize=(10.0 ,3.0))
