@@ -13,7 +13,7 @@ if not os.path.exists('output'):
 
 # get file names for all the data files
 filenames = glob.glob('data/inflammation*.csv')
-print("filenames", filenames)
+print("using files: ", filenames)
 # setup lists for holding accumulated data
 alldatamean = list()
 alldatamax = list()
@@ -21,7 +21,7 @@ alldatamin = list()
 
 for f in filenames:
     # import data and show status
-    print(f)
+    print("processing file:",f)
     data = numpy.loadtxt(fname=f, delimiter=',')
     
     # convert data from arrays to lists so can append later
@@ -30,9 +30,9 @@ for f in filenames:
     minAsList = data.min(axis=0).tolist()
     
     # print data for each specific file to standar output
-    print("mean is:",'\n--------\n', meanAsList)
-    print("\nmax is:",'\n-------\n', maxAsList)
-    print("\nmin is:",'\n-------\n', minAsList, '\n\n')
+    # print("mean is:",'\n--------\n', meanAsList)
+    # print("\nmax is:",'\n-------\n', maxAsList)
+    # print("\nmin is:",'\n-------\n', minAsList, '\n\n')
     
     # append this file's data to the overall data
     alldatamean.append(meanAsList)
@@ -45,8 +45,8 @@ alldatamax = numpy.array(alldatamax)
 alldatamin = numpy.array(alldatamin)
 
 # output overall data to standard output
-print("\n\n\n\n*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*\n")
-print("Overall Data by Day:\n\n")
+# print("\n\n\n\n*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*\n")
+# print("Overall Data by Day:\n\n")
 
 '''
 WARNING: This average only works because there are exactly
@@ -57,9 +57,9 @@ code must be changed to accommodate for a weighted average!
 '''
 
 # output mean, min, and max
-print("mean is:",'\n--------\n', alldatamean.mean(axis=0))
-print("\nmax is:",'\n-------\n', alldatamax.max(axis=0))
-print("\nmin is:",'\n-------\n', alldatamin.min(axis=0), '\n\n')
+# print("mean is:",'\n--------\n', alldatamean.mean(axis=0))
+# print("\nmax is:",'\n-------\n', alldatamax.max(axis=0))
+# print("\nmin is:",'\n-------\n', alldatamin.min(axis=0), '\n\n')
 
 ''' 
 append mean, min, and max to last row of array so the whole
@@ -70,6 +70,7 @@ alldatamax = numpy.vstack([alldatamax, alldatamax.max(axis=0)])
 alldatamin = numpy.vstack([alldatamin, alldatamin.min(axis=0)])
 
 # output results to csv
+print("writing mean.csv, max.csv, min.csv to output directory")
 numpy.savetxt('output/mean.csv', alldatamean, fmt='%.2f', delimiter=',')
 numpy.savetxt('output/max.csv', alldatamax, fmt='%.2f', delimiter=',')
 numpy.savetxt('output/min.csv', alldatamin, fmt='%.2f', delimiter=',')

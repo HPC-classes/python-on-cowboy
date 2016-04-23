@@ -20,9 +20,9 @@ for f in filenames:
     alldatamean = alldatamean + data.mean(axis=0)
     alldatamax = numpy.maximum(alldatamax, data.max(axis=0))
     alldatamin = numpy.minimum(alldatamin, data.min(axis=0))
-print('all data mean is:', alldatamean/12)
-print('all data max is:', alldatamax)
-print('all data min is:', alldatamin)
+# print('all data mean is:', alldatamean/12)
+# print('all data max is:', alldatamax)
+# print('all data min is:', alldatamin)
 
 fig = matplotlib.pyplot.figure(figsize=(10.0 ,3.0))
 
@@ -43,5 +43,6 @@ axes3.plot(alldatamin)
 
 fig.tight_layout()
 
+print("writing output/alldata.pdf")
 matplotlib.pyplot.savefig('output/alldata.pdf')
 

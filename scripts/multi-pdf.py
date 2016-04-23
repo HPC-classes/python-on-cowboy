@@ -33,5 +33,6 @@ for f in filenames:
     axes3.plot(data.min(axis=0))
 
     pdf_pages.savefig(fig)    
+print("writing output/multiple-inflammation.pdf")
 pdf_pages.close()
 
