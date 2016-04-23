@@ -6,7 +6,9 @@ Basic instructions:
 
 Log in to Cowboy.
 
-Download the repository  
+Download the repository:  
+
+(NOTE: you can also first fork this repo to your github and clone it from there -- then you can make changes, push to your repo and even submit a pull reqest back to this repo.)  
 
   `git clone https://github.com/HPC-classes/python-on-cowboy.git`
 
