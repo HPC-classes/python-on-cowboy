@@ -8,16 +8,16 @@ Log in to Cowboy.
 
 Download the repository  
 
-  git clone https://github.com/HPC-classes/python-on-cowboy.git
+  `git clone https://github.com/HPC-classes/python-on-cowboy.git`
 
-  cd python-on-cowboy
+  `cd python-on-cowboy`
 
 Submit the job script (we'll look at what it's doing while it's running)
 
-  qsub inflammation.pbs
+  `qsub inflammation.pbs`
 
-When the job finishes, you'll see a new file inflammation.pbs.oJOBID and a new directory output
+When the job finishes, you'll see a new file `inflammation.pbs.oJOBID` and a new directory `output`
 
-Download the contents of the output directory to your local computer (Cyberduck, filezilla, winscp or via command line.
+Download the contents of the output directory to your local computer (Cyberduck, filezilla, winscp or via command line.)
 
 
