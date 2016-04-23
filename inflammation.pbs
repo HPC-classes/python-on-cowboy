@@ -1,14 +1,15 @@
 #!/bin/bash
 #PBS -q express
-#PBS -l nodes=1:ppn=1
-#PBS -l walltime=20:00
+#PBS -l nodes=1:ppn=3
+#PBS -l walltime=10:00
 #PBS -j oe
 cd $PBS_O_WORKDIR
  
 module load python/3.5.0
 
-python3 scripts/all_patient_inflammation.py
-python3 scripts/multi-pdf.py 
-python3 scripts/alldata-pdf.py
-
-
+python3 scripts/all_patient_inflammation.py  &
+python3 scripts/multi-pdf.py &
+python3 scripts/alldata-pdf.py  &
+echo "started all the jobs"
+wait
+echo "finished all the jobs"
