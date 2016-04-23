@@ -4,7 +4,9 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot
 
-# % matplotlib inline
+if not os.path.exists('output'):
+    os.makedirs('output')
+
 data = numpy.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
 alldatamean = data.mean(axis=0)
 alldatamax = data.max(axis=0)
@@ -13,12 +15,7 @@ alldatamin = data.min(axis=0)
 filenames = glob.glob('data/inflammation*.csv')
 filenames = filenames[1:]
 for f in filenames:
-    #print(f)
     data = numpy.loadtxt(fname=f, delimiter=',')
-    # print("mean is", data.mean(axis=0))
-    #alldatamean = data.mean(axis=0)
-    #print("max is", data.max(axis=0))
-    #print("min is", data.min(axis=0))
     alldatamean = alldatamean + data.mean(axis=0)
     alldatamax = numpy.maximum(alldatamax, data.max(axis=0))
     alldatamin = numpy.minimum(alldatamin, data.min(axis=0))
@@ -45,7 +42,5 @@ axes3.plot(alldatamin)
 
 fig.tight_layout()
 
-# matplotlib.pyplot.show()
-
-matplotlib.pyplot.savefig('alldata.pdf')
+matplotlib.pyplot.savefig('output/alldata.pdf')
 
