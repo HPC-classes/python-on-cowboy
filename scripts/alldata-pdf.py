@@ -3,6 +3,7 @@ import glob
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot
+import os
 
 if not os.path.exists('output'):
     os.makedirs('output')

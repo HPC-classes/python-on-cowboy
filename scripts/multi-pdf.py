@@ -6,13 +6,13 @@ import glob
 import matplotlib.pyplot
 from matplotlib.backends.backend_pdf import PdfPages
 
-pdf_pages = PdfPages('multiple-inflammation.pdf')
-
 if not os.path.exists('output'):
     os.makedirs('output')
 
+pdf_pages = PdfPages('output/multiple-inflammation.pdf')
+
 filenames = glob.glob('data/inflammation*.csv')
-#filenames = filenames[0:3]
+
 for f in filenames:
     data = numpy.loadtxt(fname=f, delimiter=',')
     fig = matplotlib.pyplot.figure(figsize=(10.0 ,3.0))

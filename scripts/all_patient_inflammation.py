@@ -13,7 +13,7 @@ if not os.path.exists('output'):
 
 # get file names for all the data files
 filenames = glob.glob('data/inflammation*.csv')
-
+print("filenames", filenames)
 # setup lists for holding accumulated data
 alldatamean = list()
 alldatamax = list()
