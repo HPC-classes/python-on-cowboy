@@ -70,9 +70,9 @@ alldatamax = numpy.vstack([alldatamax, alldatamax.max(axis=0)])
 alldatamin = numpy.vstack([alldatamin, alldatamin.min(axis=0)])
 
 # output results to csv
-numpy.savetxt('output/mean.csv', alldatamean, delimiter=',')
-numpy.savetxt('output/max.csv', alldatamax, delimiter=',')
-numpy.savetxt('output/min.csv', alldatamin, delimiter=',')
+numpy.savetxt('output/mean.csv', alldatamean, fmt='%.2f', delimiter=',')
+numpy.savetxt('output/max.csv', alldatamax, fmt='%.2f', delimiter=',')
+numpy.savetxt('output/min.csv', alldatamin, fmt='%.2f', delimiter=',')
 
 # make .csv files excel friendly
 addHeader('output/mean.csv')
