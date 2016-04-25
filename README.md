@@ -20,6 +20,7 @@ Submit the job script (we'll look at what it's doing while it's running)
 
 When the job finishes, you'll see a new file `inflammation.pbs.oJOBID` and a new directory `output`
 
-Download the contents of the output directory to your local computer (Cyberduck, filezilla, winscp or via command line.)
+Download the contents of the output directory to your local computer (Cyberduck (https://cyberduck.io/?l=en), filezilla, winscp or via command line.)
+
 
 
