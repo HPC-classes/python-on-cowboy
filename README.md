@@ -14,7 +14,7 @@ Download the repository:
 
   `cd python-on-cowboy`
 
-Submit the job script (we'll look at what it's doing while it's running)
+Submit the job script (we'll look at what it's doing while it's running).  You *may* want to check `showq` and if there are a lot of free nodes, change the queue in the submit script from `express` to `batch`.
 
   `qsub inflammation.pbs`
 
